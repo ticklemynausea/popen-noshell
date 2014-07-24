@@ -41,3 +41,5 @@ ltmain.sh
 *.lai
 *.la
 *.a
+
+*.pc
