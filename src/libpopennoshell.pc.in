@@ -1,0 +1,10 @@
+prefix=@exec_prefix@
+includedir=@includedir@
+libdir=@libdir@
+
+Name: popen-noshell
+Description: A version of popen that doesn't spawn processes using /bin/sh
+URL: https://github.com/falsovsky/popen-noshell
+Version: @PACKAGE_VERSION@
+Cflags: -I${includedir}
+Libs: -L${libdir} -lpopennoshell
