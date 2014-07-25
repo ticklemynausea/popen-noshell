@@ -1,3 +1,6 @@
+#ifndef _POPEN_NOSHELL_H_
+#define _POPEN_NOSHELL_H_
+
 /*
  * popen-noshell --
  *
@@ -18,13 +21,16 @@
 #include <sys/wait.h>
 #include <unistd.h>
 
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef struct pinfo {
     FILE         *file;
     pid_t         pid;
     struct pinfo *next;
 } pinfo;
-
-static pinfo *plist = NULL;
 
 FILE *
 my_popen (char * const command[]);
@@ -34,3 +40,10 @@ popen_noshell(char * const command[], const char *mode);
 
 int
 pclose_noshell(FILE *file);
+
+#ifdef __cplusplus
+}
+#endif
+
+
+#endif /* _POPEN_NOSHELL_H_ */

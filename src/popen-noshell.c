@@ -1,5 +1,8 @@
 #include "popen-noshell.h"
 
+static pinfo *plist = NULL;
+
+
 FILE* popen_noshell(char * const command[], const char *mode)
 {
     int fd[2];
