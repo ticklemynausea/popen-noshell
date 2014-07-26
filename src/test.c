@@ -8,6 +8,7 @@ int main(int argc, char* argv[]) {
     char *p[] = {"echo", "pokemon", NULL};
     char buffer[LSIZE] = {0};
     FILE *fp = popen_noshell(p, "r");
+    int ret = 0;
 
     while (fgets(buffer, LSIZE, fp)) {
         printf("%s", buffer);
@@ -15,9 +16,10 @@ int main(int argc, char* argv[]) {
 
     if (ferror(fp)) {
        printf("omg error");
+       ret = 1;
     }
 
     pclose_noshell(fp);
 
-    
+    return ret;
 }
