@@ -19,5 +19,5 @@ int main(int argc, char* argv[]) {
 
     pclose_noshell(fp);
 
-    
+    return 0;
 }
